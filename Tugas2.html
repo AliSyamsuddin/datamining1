@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="assets/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="assets/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+  <link rel="preload" as="script" href="assets" />
 <link rel="preload" as="script" href="assets/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="assets/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
@@ -179,6 +179,9 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">𝔻𝔸𝕋𝔸 𝕄𝕀ℕ𝕀ℕ𝔾</a></li>
+
+
+
 
 
 
@@ -445,6 +448,25 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-pada-database">Implementasi pada Database</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#odelling">𝕄𝕠𝕕𝕖𝕝𝕝𝕚𝕟𝕘</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-gaussian-naive-bayes">Metode Gaussian Naive Bayes</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#erhitungan-anual-dengan-xcel">ℙ𝕖𝕣𝕙𝕚𝕥𝕦𝕟𝕘𝕒𝕟 𝕄𝕒𝕟𝕦𝕒𝕝 𝕕𝕖𝕟𝕘𝕒𝕟 𝔼𝕩𝕔𝕖𝕝</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membagi-sataset-iris-menjadi-data-train-dan-data-test">1. Membagi Sataset Iris Menjadi Data Train dan Data Test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-probabilitas-setiap-data-train">2. Menghitung Probabilitas Setiap Data Train</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-mean-dan-standart-devisiasi">3. Menghitung Mean dan Standart Devisiasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-inputan">4. Membuat Inputan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-distribusi-gaussian">5. Menghitung Distribusi Gaussian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-posteriori">6. Menghitung Posteriori</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-maximum-posteriori">7. Menentukan Maximum Posteriori</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">8. Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mplementasi-dengan-klearn">𝕀𝕞𝕡𝕝𝕖𝕞𝕖𝕟𝕥𝕒𝕤𝕚 𝕕𝕖𝕟𝕘𝕒𝕟 𝕊𝕜𝕝𝕖𝕒𝕣𝕟</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Kesimpulan</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -459,7 +481,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>𝔻𝔸𝕋𝔸 𝕄𝕀ℕ𝕀ℕ𝔾<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<img src="./gambar/image-20240320-194205.png" width="" align="" /></section>
+<img src="image-20240320-194205.png" width="" align="" /></section>
 <section class="tex2jax_ignore mathjax_ignore" id="pa-tu-ata">
 <h1>𝔸𝕡𝕒 𝕀𝕥𝕦 𝔻𝕒𝕥𝕒?<a class="headerlink" href="#pa-tu-ata" title="Link to this heading">#</a></h1>
 <p>Data sendiri merupakan sekelompok informasi atau fakta mentah yang dapat berupa simbol, angka, kata-kata, atau citra. Informasi ini diperoleh melalui proses pengamatan atau pencarian dari sumber-sumber tertentu.</p>
@@ -478,12 +500,12 @@ document.write(`
 <section id="apa-itu-aiven">
 <h2>Apa itu Aiven?<a class="headerlink" href="#apa-itu-aiven" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="http://Aiven.io">Aiven.io</a> adalah sebuah platform yang menyediakan layanan manajemen data di cloud. Mereka menawarkan berbagai layanan yang memungkinkan pengguna untuk mengelola dan mengakses berbagai jenis database open-source populer, seperti PostgreSQL, MySQL, Apache Kafka, Apache Cassandra, dan lainnya, dengan mudah di lingkungan cloud yang telah di-host. <a class="reference external" href="http://Aiven.io">Aiven.io</a> menyediakan antarmuka pengguna yang ramah pengguna serta fitur-fitur yang memudahkan pengelolaan, pemantauan, dan skalabilitas database, serta menyediakan berbagai alat pengembangan dan integrasi. Platform ini dirancang untuk membantu pengembang dan organisasi mempercepat pengembangan aplikasi dan mengelola infrastruktur data mereka dengan lebih efisien di lingkungan cloud.</p>
-<img src="./gambar/image-20240320-183912.png" width="" align="" /></section>
+<img src="image-20240320-183912.png" width="" align="" /></section>
 <section id="apa-itu-heidisql">
 <h2>Apa itu HeidiSQL?<a class="headerlink" href="#apa-itu-heidisql" title="Link to this heading">#</a></h2>
 <p>HeidiSQL adalah sebuah perangkat lunak manajemen basis data open-source yang digunakan terutama untuk mengelola dan mengelola basis data MySQL, MariaDB, PostgreSQL, dan Microsoft SQL Server. HeidiSQL menyediakan antarmuka grafis yang intuitif untuk berinteraksi dengan basis data, termasuk fitur seperti menjelajahi tabel, menjalankan kueri SQL, mengedit data, melakukan pencarian, dan masih banyak lagi.</p>
 <p>HeidiSQL menawarkan berbagai fitur yang berguna bagi pengembang dan administrator basis data, termasuk kemampuan untuk mengelola beberapa koneksi basis data secara bersamaan, mengekspor dan mengimpor data, serta menyediakan alat-alat untuk mengelola struktur basis data seperti tabel, indeks, dan tata letak. Ini merupakan alat yang populer di kalangan pengembang dan administrator basis data karena kemudahan penggunaannya dan ketersediaan fitur-fitur yang berguna.</p>
-<img src="./gambar/image-20240320-184626.png" width="" align="" /><img src="./gambar/image-20240320-184531.png" width="" align="" /><p>Sambungkan HeidiSQL pada database aiven agar database pada kedua platform dapat terhubung (pastikan untuk menyesuaikan, jika kita menggunakan mysql maka masukkan data MySQL di aiven pada HeidiSQL)</p>
+<img src="image-20240320-184626.png" width="" align="" /><img src="image-20240320-184531.png" width="" align="" /><p>Sambungkan HeidiSQL pada database aiven agar database pada kedua platform dapat terhubung (pastikan untuk menyesuaikan, jika kita menggunakan mysql maka masukkan data MySQL di aiven pada HeidiSQL)</p>
 </section>
 <section id="apa-itu-deepnote">
 <h2>Apa itu Deepnote?<a class="headerlink" href="#apa-itu-deepnote" title="Link to this heading">#</a></h2>
@@ -504,7 +526,7 @@ document.write(`
 <ol class="arabic simple" start="5">
 <li><p>Kemampuan Pembelajaran Mesin: Deepnote mendukung pembelajaran mesin dengan menyediakan integrasi dengan library populer seperti TensorFlow, PyTorch, dan scikit-learn, memungkinkan pengguna untuk melatih dan mengevaluasi model di dalam notebook.</p></li>
 </ol>
-<img src="./gambar/image-20240320-185422.png" width="" align="" /><p>Lakukan hal yang sama seperti saat menggunakan HeidiSQL untuk menyambungkan dan membuat integration, namun sebelumnya pastikan kita sudah memiliki data tersimpan pada HeidiSQL</p>
+<img src="image-20240320-185422.png" width="" align="" /><p>Lakukan hal yang sama seperti saat menggunakan HeidiSQL untuk menyambungkan dan membuat integration, namun sebelumnya pastikan kita sudah memiliki data tersimpan pada HeidiSQL</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="roses-engumpulan-ata">
@@ -514,10 +536,10 @@ document.write(`
 <h2>Memasukkan Data MySQL dan Postgre pada HeidiSQL<a class="headerlink" href="#memasukkan-data-mysql-dan-postgre-pada-heidisql" title="Link to this heading">#</a></h2>
 <p>Data iris yang kita telah download sebelumnya masih berupa file.csv sehingga kita harus mengconvert nya terlebih dahulu agar menjadi data sql, kalian bisa menggunakan platform online untuk konversi ini, dengan google keyword “convert csv to sql”. Setelah ter convert maka data iris siap untuk digunakan.</p>
 <p>Pertama, kita buka aplikasi HeidiSQL dan pilih database mana yang akan kita inputkan data (MySQL atau Postgre)</p>
-<img src="./gambar/image-20240320-191401.png" width="" align="" /><p>Kita create new database dan beri nama pada database tersebut.</p>
-<img src="./gambar/image-20240320-191957.png" width="" align="" /><p>Selanjutnya klik bagian query, lalu klik kanan dan pilih Load SQL file, lalu masukkan data iris yang telah terconvert</p>
-<img src="./gambar/image-20240320-192135.png" width="" align="" /><p>setelah muncul tampilan seperti di atas, maka selanjutnya kita run dan tunggu sampai prosesnya selesai.</p>
-<img src="./gambar/image-20240320-192326.png" width="" align="" /><p>Data iris telah berhasil kita inputkan, lakukan hal yang sama pada data postgree agar selanjutnya kita bisa mengcreate integration pada deepnote.</p>
+<img src="image-20240320-191401.png" width="" align="" /><p>Kita create new database dan beri nama pada database tersebut.</p>
+<img src="image-20240320-191957.png" width="" align="" /><p>Selanjutnya klik bagian query, lalu klik kanan dan pilih Load SQL file, lalu masukkan data iris yang telah terconvert</p>
+<img src="image-20240320-192135.png" width="" align="" /><p>setelah muncul tampilan seperti di atas, maka selanjutnya kita run dan tunggu sampai prosesnya selesai.</p>
+<img src="image-20240320-192326.png" width="" align="" /><p>Data iris telah berhasil kita inputkan, lakukan hal yang sama pada data postgree agar selanjutnya kita bisa mengcreate integration pada deepnote.</p>
 </section>
 <section id="melakukan-pemisahan-data-sql-dan-postgre">
 <h2>Melakukan Pemisahan Data SQL dan POSTGRE<a class="headerlink" href="#melakukan-pemisahan-data-sql-dan-postgre" title="Link to this heading">#</a></h2>
@@ -897,7 +919,7 @@ document.write(`
 </section>
 <section id="rumus-euclidean-distance">
 <h2>Rumus Euclidean Distance<a class="headerlink" href="#rumus-euclidean-distance" title="Link to this heading">#</a></h2>
-<img src="./gambar/image-20240320-193419.png" width="" align="" /></section>
+<img src="image-20240320-193419.png" width="" align="" /></section>
 <section id="indentifikasi-masalah">
 <h2>Indentifikasi Masalah<a class="headerlink" href="#indentifikasi-masalah" title="Link to this heading">#</a></h2>
 <p>lakukan update supaya terdapat missing values</p>
@@ -1055,18 +1077,18 @@ K-Neighbors (tetangga K) adalah K titik data terdekat dengan sebuah titik data t
 <section class="tex2jax_ignore mathjax_ignore" id="eachability-istance">
 <h1>𝟚. ℝ𝕖𝕒𝕔𝕙𝕒𝕓𝕚𝕝𝕚𝕥𝕪 𝔻𝕚𝕤𝕥𝕒𝕟𝕔𝕖 (ℝ𝔻)<a class="headerlink" href="#eachability-istance" title="Link to this heading">#</a></h1>
 <p>Reachability Distance (RD) adalah ukuran jarak yang digunakan dalam algoritma Local Outlier Factor (LOF) untuk mengevaluasi seberapa mudah suatu titik data dapat dijangkau dari tetangga-tetangganya. Secara singkat, RD mengindikasikan seberapa dekat atau jauh suatu titik data dari lingkungan tetangganya, dan digunakan dalam perhitungan LOF skor untuk deteksi outlier. Semakin tinggi nilai RD, semakin besar kemungkinan titik data tersebut dianggap sebagai outlier.</p>
-<img src="./gambar/image-20240320-220049.png" width="" align="" /><p>Dari contoh Gambar., perhatikan dari titik A ke B.</p>
+<img src="image-20240320-220049.png" width="" align="" /><p>Dari contoh Gambar., perhatikan dari titik A ke B.</p>
 <p>RD = max(k-distance(B), distance(A, B))</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="ocal-eachability-ensity">
 <h1>𝟛. 𝕃𝕠𝕔𝕒𝕝 ℝ𝕖𝕒𝕔𝕙𝕒𝕓𝕚𝕝𝕚𝕥𝕪 𝔻𝕖𝕟𝕤𝕚𝕥𝕪 (𝕃ℝ𝔻)<a class="headerlink" href="#ocal-eachability-ensity" title="Link to this heading">#</a></h1>
 <p>Local Reachability Density (LRD) adalah ukuran kepadatan lokal dari sebuah titik data dalam dataset. Ini digunakan dalam algoritma Local Outlier Factor (LOF) untuk mengevaluasi seberapa dekat atau terisolasi titik tersebut dari lingkungan tetangganya. LRD tinggi menunjukkan titik data yang berada dalam lingkungan yang padat, sedangkan LRD rendah menunjukkan isolasi relatif dari tetangga-tetangganya. Ini membantu dalam identifikasi outlier dalam analisis data.</p>
-<img src="./gambar/image-20240320-220736.png" width="" align="" /><p>Di sini, semakin tinggi nilai LRD sebuah titik data, semakin padat atau dekat titik data tersebut dengan tetangga-tetangganya. LRD yang tinggi menandakan bahwa titik data tersebut berada dalam wilayah dengan kepadatan tinggi, sedangkan LRD yang rendah menunjukkan bahwa titik data tersebut berada dalam wilayah dengan kepadatan rendah. Dalam hal ini, x adalah titik data yang sedang dinilai, y adalah salah satu dari K tetangga terdekat dari x, dan RD(x,y) adalah Reachability Distance antara x dan y.</p>
+<img src="image-20240320-220736.png" width="" align="" /><p>Di sini, semakin tinggi nilai LRD sebuah titik data, semakin padat atau dekat titik data tersebut dengan tetangga-tetangganya. LRD yang tinggi menandakan bahwa titik data tersebut berada dalam wilayah dengan kepadatan tinggi, sedangkan LRD yang rendah menunjukkan bahwa titik data tersebut berada dalam wilayah dengan kepadatan rendah. Dalam hal ini, x adalah titik data yang sedang dinilai, y adalah salah satu dari K tetangga terdekat dari x, dan RD(x,y) adalah Reachability Distance antara x dan y.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="ocal-utlier-actor">
 <h1>𝟜. 𝕃𝕠𝕔𝕒𝕝 𝕆𝕦𝕥𝕝𝕚𝕖𝕣 𝔽𝕒𝕔𝕥𝕠𝕣 (𝕃𝕆𝔽)<a class="headerlink" href="#ocal-utlier-actor" title="Link to this heading">#</a></h1>
 <p>Local Outlier Factor (LOF) adalah metode deteksi outlier yang digunakan dalam analisis data. LOF mengevaluasi seberapa anomali atau “outlying” sebuah titik data dalam dataset dengan mempertimbangkan lingkungan lokalnya. Secara khusus, LOF membandingkan kerapatan titik data tersebut dengan kerapatan tetangga-tetangganya. Jika titik data memiliki kerapatan yang lebih rendah dari tetangga-tetangganya, maka nilai LOF-nya akan tinggi, menandakan bahwa titik tersebut mungkin merupakan outlier. LOF adalah alat yang berguna untuk mengidentifikasi titik-titik data yang berbeda dari lingkungan sekitarnya dalam dataset.</p>
-<img src="./gambar/image-20240320-221121.png" width="" align="" /><p>LRD tiap titik digunakan untuk membandingkan dengan rata-rata LRD K tetangganya. LOF adalah perbandingan rata-rata LRD K tetangga dari sebuah titik A dengan LRD A.</p>
+<img src="image-20240320-221121.png" width="" align="" /><p>LRD tiap titik digunakan untuk membandingkan dengan rata-rata LRD K tetangganya. LOF adalah perbandingan rata-rata LRD K tetangga dari sebuah titik A dengan LRD A.</p>
 <p>Jika suatu titik bukan merupakan pencilan (inlier), rasio rata-rata LRD tetangganya hampir sama dengan LRD titik itu sendiri (karena kepadatan titik dan tetangganya hampir sama). Dalam kasus ini, LOF akan mendekati nilai 1. Sebaliknya, jika suatu titik merupakan outlier, LRD titik tersebut lebih kecil dari rata-rata LRD tetangganya. Akibatnya, nilai LOF akan tinggi.</p>
 <p>Meskipun LOF &gt; 1 seringkali menandakan outlier, hal ini tidak selalu benar. Misalkan jika kita mengetahui bahwa hanya ada satu outlier dalam data, kita dapat mengambil nilai LOF maksimum di antara semua nilai LOF, dan titik yang sesuai dengan nilai LOF maksimum akan dianggap sebagai outlier.</p>
 </section>
@@ -1081,31 +1103,31 @@ K-Neighbors (tetangga K) adalah K titik data terdekat dengan sebuah titik data t
 <li><p>Menghitung Local Outlier Factor (LOF)</p></li>
 </ol>
 <p>Kita tentukan data yang akan kita gunakan. Contoh data di bawah ini ada X, Y, dan Z yang bertipe numeric yang berjumlah 10 data.</p>
-<img src="./gambar/image-20240320-223358.png" width="" align="" /><section id="menghitung-jarak-dan-menentukan-tetangga">
+<img src="image-20240320-223358.png" width="" align="" /><section id="menghitung-jarak-dan-menentukan-tetangga">
 <h2>1. Menghitung jarak dan menentukan tetangga<a class="headerlink" href="#menghitung-jarak-dan-menentukan-tetangga" title="Link to this heading">#</a></h2>
 <p>pada perhitungan KNN akan menggunakan metode euclidean dengan menggunakan K = 3Menghitung Distance (Euclidien)</p>
 <p>Menghitung Distance (Euclidien)</p>
-<img src="./gambar/image-20240321-000803.png" width="" align="" /></section>
+<img src="image-20240321-000803.png" width="" align="" /></section>
 <section id="menghitung-reachability-distance-rd">
 <h2>2. Menghitung Reachability Distance (RD)<a class="headerlink" href="#menghitung-reachability-distance-rd" title="Link to this heading">#</a></h2>
 <p>Selanjutnya kita hitung nilai Reachability Distance dari masing-masing objek. Tapi sebelum itu kita harus menentukan berapa banyak objek yang masuk ke dalam ruang lingkup tetangga ke-n dari suatu objek. Secara matematis bisa dituliskan seperti di bawah ini :</p>
 <p>k-distance neighborhood of o, Nk(o) = {o’| o’ in D, dist(o, o’) ≤ distk(o)}</p>
 <p>Yang dimana nilai dari Nk(o) akan lebih besar atau sama dengan nilai K</p>
-<img src="./gambar/image-20240321-001717.png" width="" align="" /><p>Selanjutnya hitung Reachability Distance dari maring-masing objek, untuk rumusnya yaitu :</p>
-<img src="./gambar/image-20240321-005916.png" width="" align="" /><p>Maka RD dari keseluruhan object:</p>
-<img src="./gambar/image-20240321-010041.png" width="" align="" /></section>
+<img src="image-20240321-001717.png" width="" align="" /><p>Selanjutnya hitung Reachability Distance dari maring-masing objek, untuk rumusnya yaitu :</p>
+<img src="image-20240321-005916.png" width="" align="" /><p>Maka RD dari keseluruhan object:</p>
+<img src="image-20240321-010041.png" width="" align="" /></section>
 <section id="menghitung-local-reachability-distance-lrd">
 <h2>3. Menghitung Local Reachability Distance (LRD)<a class="headerlink" href="#menghitung-local-reachability-distance-lrd" title="Link to this heading">#</a></h2>
 <p>Selanjutnya melakukan perhitungan Local Reachability Distance (LRD), LRD dirumuskan seperti di bawah ini :</p>
-<img src="./gambar/image-20240321-010350.png" width="" align="" /><p>Berdasarkan rumus diatas bisa dideskripsikan bahwa LRD merupakan hasil dari pembagian banyak jumlah tetangga ke-n dari suatu objek dibagi dengan total dari reachdistance ability objek tersebut.</p>
+<img src="image-20240321-010350.png" width="" align="" /><p>Berdasarkan rumus diatas bisa dideskripsikan bahwa LRD merupakan hasil dari pembagian banyak jumlah tetangga ke-n dari suatu objek dibagi dengan total dari reachdistance ability objek tersebut.</p>
 <p>Sehinga jika dilakukan perhitungan untuk setiap objek didapatkan hasil :</p>
-<img src="./gambar/image-20240321-012238.png" width="" align="" /></section>
+<img src="image-20240321-012238.png" width="" align="" /></section>
 <section id="menghitung-local-outlier-factor-lof">
 <h2>4. Menghitung Local Outlier Factor (LOF)<a class="headerlink" href="#menghitung-local-outlier-factor-lof" title="Link to this heading">#</a></h2>
 <p>Selanjutnya yang terakhir yaitu menghitung Local Outlier Factor (LOF), dirumuskan sebagai berikut :</p>
-<img src="./gambar/image-20240321-012408.png" width="" align="" /><p>Berdasarkan rumus diatas diketahui jika LOF didapat dari hasil perkalian jumlah nilai lrd suatu objek dikali dengan jumlah reachability distance suatu objek.</p>
+<img src="image-20240321-012408.png" width="" align="" /><p>Berdasarkan rumus diatas diketahui jika LOF didapat dari hasil perkalian jumlah nilai lrd suatu objek dikali dengan jumlah reachability distance suatu objek.</p>
 <p>Sehinga jika dilakukan perhitungan untuk setiap objek didapatkan hasil :</p>
-<img src="./gambar/image-20240321-013923.png" width="" align="" /><p>dapat disimpulkan bahwa pada lof3(c) merupakan outlier karena rentang nilainya sangat jauh yaitu 130,3897</p>
+<img src="image-20240321-013923.png" width="" align="" /><p>dapat disimpulkan bahwa pada lof3(c) merupakan outlier karena rentang nilainya sangat jauh yaitu 130,3897</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="enghitung-enggunakan-ython">
@@ -1322,12 +1344,303 @@ Successfully installed mysql-connector-python-8.3.0
 <span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
 </pre></div>
 </div>
-<img alt="./gambar/_images/312debffc17b8e0e7450d7b482bfbc4fd5a729f9b701419867ac2e036e514976.png" src="_images/312debffc17b8e0e7450d7b482bfbc4fd5a729f9b701419867ac2e036e514976.png" />
+<img alt="_images/312debffc17b8e0e7450d7b482bfbc4fd5a729f9b701419867ac2e036e514976.png" src="_images/312debffc17b8e0e7450d7b482bfbc4fd5a729f9b701419867ac2e036e514976.png" />
 </div>
 </div>
 <p>Berdasarkan hasil grafik tersebut, outlier ditunjukkan dengan warna merah. Jika diamati bahwa outlier yang ditampilkan dalam warna merah memiliki posisi yang berbeda pada sumbu x dan sumbu y, ini menunjukkan bahwa ketiga titik tersebut mungkin memiliki nilai yang jauh dari nilai rata-rata atau mayoritas pada sumbu x, tetapi tidak selalu memiliki pola yang sama pada sumbu y. Dengan kata lain, outlier-outlier ini mungkin terletak pada posisi yang ekstrem pada sumbu x, tetapi tidak pada sumbu y. Di sini, sumbu x merujuk pada kolom SepalLengthCm, sementara sumbu y merujuk pada kolom SepalWidthCm.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>mysql-connector-python
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">LocalOutlierFactor</span>
+<span class="kn">import</span> <span class="nn">mysql.connector</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Informasi koneksi ke database MySQL</span>
+<span class="n">hostname</span> <span class="o">=</span> <span class="s2">&quot;database1-alisyamsuddin22086.a.aivencloud.com&quot;</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">22753</span>
+<span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;avnadmin&#39;</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s2">&quot;AVNS_zWY_hBUclXzcicAmP1r&quot;</span>
+<span class="n">database</span> <span class="o">=</span> <span class="s1">&#39;tugas2&#39;</span>
+
+<span class="c1"># Membuat koneksi ke database MySQL</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="n">hostname</span><span class="p">,</span>
+    <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">,</span>
+    <span class="n">user</span><span class="o">=</span><span class="n">username</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">,</span>
+    <span class="n">database</span><span class="o">=</span><span class="n">database</span>
+<span class="p">)</span>
+
+<span class="c1"># Membaca data dari database menggunakan Pandas</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT SepalLengthCm, SepalWidthCm FROM outlier&quot;</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[[</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">]</span>
+
+<span class="c1"># Menutup koneksi ke database</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># Membuat model LOF</span>
+<span class="n">lof</span> <span class="o">=</span> <span class="n">LocalOutlierFactor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">contamination</span><span class="o">=</span><span class="mf">0.03</span><span class="p">)</span>
+
+<span class="c1"># Melakukan prediksi outlier</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">lof</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Mendapatkan LOF scores</span>
+<span class="n">lof_scores</span> <span class="o">=</span> <span class="n">lof</span><span class="o">.</span><span class="n">negative_outlier_factor_</span>
+
+<span class="c1"># Menampilkan data dengan outlier yang diidentifikasi</span>
+<span class="n">outlier_indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span> <span class="k">if</span> <span class="n">label</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">outlier_data</span> <span class="o">=</span> <span class="p">[(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lof_scores</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">outlier_indices</span><span class="p">]</span>
+
+<span class="c1"># Sorting outlier_data by LOF scores</span>
+<span class="n">outlier_data</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Menampilkan outlier dengan LOF scores dan rank</span>
+<span class="k">for</span> <span class="n">rank</span><span class="p">,</span> <span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">outlier_data</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rank </span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s2">: LOF Score: </span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="s2">, Data: </span><span class="si">{</span><span class="n">point</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Visualisasi data dengan outlier yang diidentifikasi</span>
+<span class="n">outlier_points</span> <span class="o">=</span> <span class="p">[</span><span class="n">point</span> <span class="k">for</span> <span class="n">point</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">outlier_data</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">x</span><span class="p">],</span> <span class="p">[</span><span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">x</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">outlier_points</span><span class="p">],</span> <span class="p">[</span><span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">outlier_points</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting mysql-connector-python
+  Downloading mysql_connector_python-8.3.0-cp39-cp39-manylinux_2_17_x86_64.whl (21.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">21.5/21.5 MB</span> <span class=" -Color -Color-Red">40.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hInstalling collected packages: mysql-connector-python
+Successfully installed mysql-connector-python-8.3.0
+
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">24.0</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+Rank 1: LOF Score: -41.627171538971005, Data: [4.7, 30.0]
+Rank 2: LOF Score: -41.61759063897269, Data: [5.2, 30.0]
+Rank 3: LOF Score: -38.33375577147912, Data: [6.1, 30.0]
+Rank 4: LOF Score: -34.89681346529148, Data: [6.7, 30.0]
+Rank 5: LOF Score: -32.43126859392425, Data: [32.0, 3.9]
+</pre></div>
+</div>
+<img alt="_images/312debffc17b8e0e7450d7b482bfbc4fd5a729f9b701419867ac2e036e514976.png" src="_images/312debffc17b8e0e7450d7b482bfbc4fd5a729f9b701419867ac2e036e514976.png" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="odelling">
+<h1>𝕄𝕠𝕕𝕖𝕝𝕝𝕚𝕟𝕘<a class="headerlink" href="#odelling" title="Link to this heading">#</a></h1>
+<section id="metode-gaussian-naive-bayes">
+<h2>Metode Gaussian Naive Bayes<a class="headerlink" href="#metode-gaussian-naive-bayes" title="Link to this heading">#</a></h2>
+<p>Metode klasifikasi Gaussian Naive Bayes adalah sebuah teknik dalam machine learning yang memanfaatkan probabilitas dan Distribusi Gaussian atau Distribusi Normal. Distribusi Gaussian mengasumsikan bahwa setiap fitur dalam data memiliki pengaruh yang independen dalam memprediksi targetnya. Dengan mengkombinasikan prediksi dari semua parameter, teknik ini menghasilkan prediksi akhir dengan probabilitas target yang diklasifikasikan ke dalam dua kelas. Hasil klasifikasi akhir ditentukan oleh probabilitas tertinggi dari kelompok target, sehingga menentukan kelas dari suatu data.</p>
+<img src="image-20240403-191227.png" width="" align="" /></section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="erhitungan-anual-dengan-xcel">
+<h1>ℙ𝕖𝕣𝕙𝕚𝕥𝕦𝕟𝕘𝕒𝕟 𝕄𝕒𝕟𝕦𝕒𝕝 𝕕𝕖𝕟𝕘𝕒𝕟 𝔼𝕩𝕔𝕖𝕝<a class="headerlink" href="#erhitungan-anual-dengan-xcel" title="Link to this heading">#</a></h1>
+<p>Langkah-langkah dalam menghitung gaussian naive bayes :</p>
+<ol class="arabic simple">
+<li><p>Bagi iris dataset menjadi 2 bagian (data train=80%, data test=20%)</p></li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>Hitung probabilitas setiap data train</p></li>
+</ol>
+<img src="image-20240403-191516.png" width="" align="left" /><ol class="arabic simple" start="3">
+<li><p>Hitung mean dan standart devisiasi dari setiap fitur beserta setiap kelas pada data train</p></li>
+</ol>
+<ol class="arabic simple" start="4">
+<li><p>Tentukan suatu inputan data sepalLength, sepalWidth, petalLength, petalWidth</p></li>
+</ol>
+<ol class="arabic simple" start="5">
+<li><p>Hitung distribusi gausiaan setiap fitur beserta setiap kelas pada data train</p></li>
+</ol>
+<img src="image-20240403-191623.png" width="" align="left" /><ol class="arabic simple" start="6">
+<li><p>Hitung posteriori dari setiap kelas</p></li>
+</ol>
+<img src="image-20240403-194826.png" width="" align="left" /><ol class="arabic simple" start="7">
+<li><p>Tentukan maximum posteriori</p></li>
+</ol>
+<ol class="arabic simple" start="8">
+<li><p>Pada kelas yg mendapat posteriori maksimal itulah kelas dari data inputan baru tersebut</p></li>
+</ol>
+<section id="membagi-sataset-iris-menjadi-data-train-dan-data-test">
+<h2>1. Membagi Sataset Iris Menjadi Data Train dan Data Test<a class="headerlink" href="#membagi-sataset-iris-menjadi-data-train-dan-data-test" title="Link to this heading">#</a></h2>
+<p>Pada pembagain data test dan data train sebesar :</p>
+<ul class="simple">
+<li><p>Data train : 80% = 40 setosa, 40 versicolor, 40 virginica</p></li>
+<li><p>Data  test : 20 % = 10 setosa, 10 versicolor, 10 virginica</p></li>
+</ul>
+<p>setelah itu buat 4 sheet excel</p>
+<ol class="arabic simple">
+<li><p>Sheet ke-1 : untuk menyimpan data test yang isi nya 30 record</p></li>
+<li><p>Sheet ke-2 : untuk menyimpan data train setosa 40 record</p></li>
+<li><p>Sheet ke-3 : untuk menyimpan data train versicolor 40 record</p></li>
+<li><p>Sheet ke-4 : untuk menyimpan data train virginica 40 record</p></li>
+</ol>
+</section>
+<section id="menghitung-probabilitas-setiap-data-train">
+<h2>2. Menghitung Probabilitas Setiap Data Train<a class="headerlink" href="#menghitung-probabilitas-setiap-data-train" title="Link to this heading">#</a></h2>
+<p>Dari rumus yang diberikan sebelumnya di langkah-langkah, akan dilakukan perhitungan probabilitas dari masing-masing kelas sesuai dengan jumlah data train pada kelas tersebut kemudian dibagi dengan banyaknya total data train</p>
+<ul class="simple">
+<li><p>P(a) : probabilitas</p></li>
+<li><p>n(a) : banyaknya record data train pada suatu kelas (40)</p></li>
+<li><p>N : total banyaknya record data train (40+40+40=120)</p></li>
+</ul>
+<img src="image-20240403-194034.png" width="" align="" /></section>
+<section id="menghitung-mean-dan-standart-devisiasi">
+<h2>3. Menghitung Mean dan Standart Devisiasi<a class="headerlink" href="#menghitung-mean-dan-standart-devisiasi" title="Link to this heading">#</a></h2>
+<p>Kita hitung mean dan standart devisiasi dari masing-masing fitur pada setiap kelas di data train.</p>
+<p>Berikut rumus yang ad pada excel :</p>
+<ul class="simple">
+<li><p>Mean : =AVERAGE()</p></li>
+<li><p>Standart Devisiasi : =STDEV.P()</p></li>
+</ul>
+<img src="image-20240403-201406.png" width="50%" align="" /><img src="image-20240403-201458.png" width="50%" align="" /><img src="image-20240403-201526.png" width="50%" align="" /></section>
+<section id="membuat-inputan">
+<h2>4. Membuat Inputan<a class="headerlink" href="#membuat-inputan" title="Link to this heading">#</a></h2>
+<p>Buatlah dataset acak untuk input sepalLength, sepalWidth, petalLength, dan petalWidth. Data ini akan digunakan untuk menguji hasil perhitungan Excel kita, sehingga kita dapat menentukan kelas mana yang sesuai dengan data input kita, apakah itu setosa, versicolor, atau virginica.</p>
+<p>Untuk detil inputan sebagai berikut :</p>
+<img src="image-20240403-202558.png" width="actual" align="" /></section>
+<section id="menghitung-distribusi-gaussian">
+<h2>5. Menghitung Distribusi Gaussian<a class="headerlink" href="#menghitung-distribusi-gaussian" title="Link to this heading">#</a></h2>
+<p>Setelah didapati mean dan standart devisiasi dari setiap fitur pada setiap kelas, dan juga sudah menentukan inputan. maka langkah selanjutnya adalah memasukkan ke dalam rumus distribusi gaussian.</p>
+<p>Berikut ini adalah rumusnya :</p>
+<img src="image-20240403-202832.png" width="" align="" /><img src="image-20240403-202948.png" width="" align="" /><p>Setelah kita tahu rumusnya, maka sekarang kita dapat melakukan perhitungan di excel. Berikut ini adalah hasil dari perhitungannya :</p>
+<img src="image-20240403-203656.png" width="" align="" /></section>
+<section id="menghitung-posteriori">
+<h2>6. Menghitung Posteriori<a class="headerlink" href="#menghitung-posteriori" title="Link to this heading">#</a></h2>
+<p>Setelah didapat semua hasil dari distribusi gaussian, langkah selanjutnya adalah menentukan posteriori-nya. Berikut ini untuk rumusnya :</p>
+<img src="image-20240403-203940.png" width="" align="" /><p>Dimana</p>
+<ul class="simple">
+<li><p>P(A|Hi) : hasil perkalian setiap fitur pada setiap kelas</p></li>
+<li><p>P(a) : probabilitas setiap kelas</p></li>
+</ul>
+<p>Contohnya kita akan menghitung posteriori dari kelas versicolor, maka caranya adalah sebagai berikut :</p>
+<p>P(A|Hi) = 0,87 * 0,92 * 0,22 * 0,01
+P(a) = 0,33
+posteriori = P(A|Hi) * P(a) = 0,000341280</p>
+<p>Berikut ini hasil untuk perhitungan pada kelas lain :</p>
+<img src="image-20240403-204830.png" width="" align="" /></section>
+<section id="menentukan-maximum-posteriori">
+<h2>7. Menentukan Maximum Posteriori<a class="headerlink" href="#menentukan-maximum-posteriori" title="Link to this heading">#</a></h2>
+<p>Setelah semua posteriori telah diperoleh, langkah berikutnya adalah menentukan nilai maksimum dari posteriori tersebut. Nilai maximum pada posteriori yaitu pada class Virginica dengan nilai : 0,121266474</p>
+</section>
+<section id="kesimpulan">
+<h2>8. Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h2>
+<p>Dari hasil perhitungan diatas dapat disimpulkan bahwa data dengan inputan sebagai berikut :</p>
+<ul class="simple">
+<li><p>SepalLengthCm : 6</p></li>
+<li><p>SepalWidthCm : 3</p></li>
+<li><p>PetalLengthCm : 5</p></li>
+<li><p>PetalWidthCm : 2</p></li>
+</ul>
+<p>Yang tertinggi adalah kelas Iris-Virginica, karena mendapat nilai posteriori tertinggi</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mplementasi-dengan-klearn">
+<h1>𝕀𝕞𝕡𝕝𝕖𝕞𝕖𝕟𝕥𝕒𝕤𝕚 𝕕𝕖𝕟𝕘𝕒𝕟 𝕊𝕜𝕝𝕖𝕒𝕣𝕟<a class="headerlink" href="#mplementasi-dengan-klearn" title="Link to this heading">#</a></h1>
+<p>Setelah melakukan prediksi kelas data baru dengan perhitungan manual menggunakan Excel, langkah selanjutnya adalah menguji kebenaran prediksi tersebut dengan membuat sebuah model menggunakan bantuan library scikit-learn.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># install terlebih dahulu mysql-connector untuk menghubungkan ke database</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>mysql-connector-python
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting mysql-connector-python
+  Downloading mysql_connector_python-8.3.0-cp39-cp39-manylinux_2_17_x86_64.whl (21.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">21.5/21.5 MB</span> <span class=" -Color -Color-Red">72.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hInstalling collected packages: mysql-connector-python
+Successfully installed mysql-connector-python-8.3.0
+
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">24.0</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">mysql.connector</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+
+<span class="c1"># koneksi ke database MySQL</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;database1-alisyamsuddin22086.a.aivencloud.com&quot;</span><span class="p">,</span>
+    <span class="n">user</span><span class="o">=</span><span class="s2">&quot;avnadmin&quot;</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="s2">&quot;AVNS_zWY_hBUclXzcicAmP1r&quot;</span><span class="p">,</span>
+    <span class="n">port</span> <span class="o">=</span> <span class="s2">&quot;22753&quot;</span><span class="p">,</span>
+    <span class="n">database</span><span class="o">=</span><span class="s2">&quot;tugas1&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Membaca data dari database menggunakan Pandas</span>
+<span class="n">sql_query</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM tableName&quot;</span>
+<span class="n">data_iris</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">sql_query</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
+
+<span class="c1"># Menghapus kolom Id, dikarenakan kurang relevan</span>
+<span class="n">data_iris</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># memisahkan atribut dan label</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data_iris</span><span class="p">[[</span><span class="s1">&#39;SepalLengthCm&#39;</span><span class="p">,</span> <span class="s1">&#39;SepalWidthCm&#39;</span><span class="p">,</span> <span class="s1">&#39;PetalLengthCm&#39;</span><span class="p">,</span> <span class="s1">&#39;PetalWidthCm&#39;</span> <span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_iris</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">]</span>
+ 
+<span class="c1"># Membagi dataset menjadi data latih &amp; data uji</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+ 
+<span class="c1"># membuat model Gaussian naive bayes</span>
+<span class="n">gnb_model</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+ 
+<span class="c1"># Melatih model dengan menggunakan data latih</span>
+<span class="n">gnb_model</span> <span class="o">=</span> <span class="n">gnb_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Evaluasi Model</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">gnb_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+ 
+<span class="n">acc_secore</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_test</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy: &#39;</span><span class="p">,</span> <span class="n">acc_secore</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_34/3407746712.py:18: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  data_iris = pd.read_sql(sql_query, conn)
+Accuracy:  0.967
+</pre></div>
+</div>
+</div>
+</div>
+<p>Untuk pengujian akan diberikan data iris sama seperti perhitungan excel, yaitu sebagai berikut :</p>
+<ol class="arabic simple">
+<li><p>SepalLengthCm : 6</p></li>
+<li><p>SepalWidthCm : 3</p></li>
+<li><p>PetalLengthCm : 5</p></li>
+<li><p>PetalWidthCm : 2</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">gnb_model</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Iris-virginica&#39;]
+/shared-libs/python3.9/py/lib/python3.9/site-packages/sklearn/base.py:450: UserWarning: X does not have valid feature names, but GaussianNB was fitted with feature names
+  warnings.warn(
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id2">
+<h2>Kesimpulan<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Hasil menunjukkan bahwa data yang kita masukkan termasuk dalam spesies Iris-virginica, dimana ini sesuai dengan prediksi manual yang kita lakukan sebelumnya.</p>
 <a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=85a74364-f201-44cf-9dfb-c49ab39de16c' target="_blank">
-<img alt='./gambar/Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
+<img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
 Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></section>
 </section>
 
@@ -1449,6 +1762,25 @@ Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></s
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-pada-database">Implementasi pada Database</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#odelling">𝕄𝕠𝕕𝕖𝕝𝕝𝕚𝕟𝕘</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-gaussian-naive-bayes">Metode Gaussian Naive Bayes</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#erhitungan-anual-dengan-xcel">ℙ𝕖𝕣𝕙𝕚𝕥𝕦𝕟𝕘𝕒𝕟 𝕄𝕒𝕟𝕦𝕒𝕝 𝕕𝕖𝕟𝕘𝕒𝕟 𝔼𝕩𝕔𝕖𝕝</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membagi-sataset-iris-menjadi-data-train-dan-data-test">1. Membagi Sataset Iris Menjadi Data Train dan Data Test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-probabilitas-setiap-data-train">2. Menghitung Probabilitas Setiap Data Train</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-mean-dan-standart-devisiasi">3. Menghitung Mean dan Standart Devisiasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-inputan">4. Membuat Inputan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-distribusi-gaussian">5. Menghitung Distribusi Gaussian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-posteriori">6. Menghitung Posteriori</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-maximum-posteriori">7. Menentukan Maximum Posteriori</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">8. Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mplementasi-dengan-klearn">𝕀𝕞𝕡𝕝𝕖𝕞𝕖𝕟𝕥𝕒𝕤𝕚 𝕕𝕖𝕟𝕘𝕒𝕟 𝕊𝕜𝕝𝕖𝕒𝕣𝕟</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Kesimpulan</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
@@ -1498,7 +1830,7 @@ By The Jupyter Book Community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="assets/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="assets"></script>
 <script src="assets/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
